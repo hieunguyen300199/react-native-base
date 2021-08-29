@@ -3,7 +3,6 @@ import { LogBox } from 'react-native'
 import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import CodePush from 'react-native-code-push'
 
 import '@/utils/i18next'
 import { navigationRef } from '@/navigation/NavigationService'
@@ -26,10 +25,4 @@ const App: React.FC = () => {
   )
 }
 
-const CodePushApp = CodePush({
-  updateDialog: CodePush.DEFAULT_UPDATE_DIALOG,
-  installMode: CodePush.InstallMode.IMMEDIATE,
-  checkFrequency: CodePush.CheckFrequency.ON_APP_START,
-})(App)
-
-export default __DEV__ ? App : CodePushApp
+export default App

@@ -12,6 +12,8 @@ $ npm run eject
 
 # for ios
 $ npm run pod-install
+
+$ npm start
 ```
 
 ## Environment Setup [Here](https://github.com/hieunguyen300199/static-file/blob/master/react-native-guide/environment-setup/environment-setup.md#environment-setup)
@@ -72,4 +74,3 @@ $ npm run codepush:android-product
 ## Note
 
 - For iOS I recommend that we should run application with Xcode and change Bundle Identifier match with each environment.
-- If you have an issue with Flipper, [check this page](https://github.com/facebook/react-native/issues/30836).
