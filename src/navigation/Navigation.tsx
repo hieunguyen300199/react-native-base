@@ -1,11 +1,11 @@
 import React from 'react'
-import Spinner from 'react-native-loading-spinner-overlay'
 
 import AppStack from '@/navigation/stacks/AppStack'
 import AuthStack from '@/navigation/stacks/AuthStack'
 import { useAppContext } from '@/contexts/app/app.context'
 import { api } from '@/utils/axios'
 import { removeContext, updateContext } from '@/contexts/app/app.action'
+import { OverlayLoading } from '@/components/common'
 
 const Navigation = () => {
   const { state, dispatch } = useAppContext()
@@ -15,15 +15,16 @@ const Navigation = () => {
     if (!state.accessToken) return
     setLoading(true)
     api
-      .get('/auth/me')
+      .get('/users/5')
       .then(({ data: user }) => {
-        dispatch(updateContext({ user }))
+        const fullName = `${user.data.first_name} ${user.data.last_name}`
+        dispatch(updateContext({ user: { ...user.data, fullName } }))
       })
       .catch(() => dispatch(removeContext()))
       .finally(() => setLoading(false))
   }, [state.accessToken])
 
-  if (isloading) return <Spinner visible />
+  if (isloading) return <OverlayLoading visible />
 
   if (!state.user?.id) return <AuthStack />
 

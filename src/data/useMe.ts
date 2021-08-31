@@ -1,13 +1,14 @@
 import { useQuery } from 'react-query'
 
 import { api } from '@/utils/axios'
+import { QUERY_KEY } from '@/data/query-key'
 
 export const useMe = () =>
   useQuery(
-    'me',
+    QUERY_KEY.ME,
     async () => {
-      const response = await api.get('/auth/me')
-      return response.data
+      const res = await api.get('/auth/me')
+      return res.data
     },
     {
       staleTime: 300000,

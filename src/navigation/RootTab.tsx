@@ -1,57 +1,71 @@
 import React from 'react'
-import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Image } from 'react-native'
+import { ScaledSheet } from 'react-native-size-matters'
 
+import { useTranslation } from 'react-i18next'
 import Icon from '@/assets/icon'
 import HomeStack from '@/navigation/stacks/HomeStack'
 import SettingStack from '@/navigation/stacks/SettingStack'
-import APP_ROUTER from '@/navigation/config/router'
+import ROUTER from '@/navigation/config/router'
 
 type TabStackType = {
   key: number
   name: string
   component: React.ComponentType<any>
-  options: BottomTabNavigationOptions
+  tabBarLabel: string
+  tabBarIcon: ({ color }: any) => React.ReactNode
 }
 
 const Tab = createBottomTabNavigator()
 
 const TabBarIcon: React.FC<{ color: string; source: any }> = ({ color, source }) => (
-  <Image source={source} style={{ tintColor: color, width: 25, height: 25 }} />
+  <Image source={source} style={[styles.icon, { tintColor: color }]} />
 )
 
 const ArrayTabs: TabStackType[] = [
   {
     key: 1,
-    name: APP_ROUTER.APP.HOME.TAB,
+    name: ROUTER.APP.HOME.TAB,
     component: HomeStack,
-    options: {
-      tabBarLabel: 'Home',
-      tabBarIcon: ({ color }) => <TabBarIcon color={color} source={Icon.home} />,
-    },
+    tabBarLabel: 'home.title',
+    tabBarIcon: ({ color }) => <TabBarIcon color={color} source={Icon.home} />,
   },
   {
     key: 2,
-    name: APP_ROUTER.APP.SETTING.TAB,
+    name: ROUTER.APP.SETTING.TAB,
     component: SettingStack,
-    options: {
-      tabBarLabel: 'Setting',
-      tabBarIcon: ({ color }) => <TabBarIcon color={color} source={Icon.setting} />,
-    },
+    tabBarLabel: 'setting.title',
+    tabBarIcon: ({ color }) => <TabBarIcon color={color} source={Icon.setting} />,
   },
 ]
 
-const RootTab = () => (
-  <Tab.Navigator
-    screenOptions={{
-      headerShown: false,
-      tabBarLabelStyle: { fontWeight: 'bold', fontSize: 13 },
-    }}
-  >
-    {ArrayTabs.map((tab) => (
-      <Tab.Screen {...tab} key={tab.key} />
-    ))}
-  </Tab.Navigator>
-)
+const RootTab = () => {
+  const { t } = useTranslation()
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarLabelStyle: styles.tabBarLabelStyle,
+        tabBarActiveTintColor: '#000',
+      }}
+    >
+      {ArrayTabs.map((tab) => (
+        <Tab.Screen {...tab} key={tab.key} options={{ tabBarLabel: t(tab.tabBarLabel), tabBarIcon: tab.tabBarIcon }} />
+      ))}
+    </Tab.Navigator>
+  )
+}
+
+const styles = ScaledSheet.create({
+  icon: {
+    width: 25,
+    height: 25,
+  },
+  tabBarLabelStyle: {
+    fontWeight: 'bold',
+    fontSize: '10@s',
+  },
+})
 
 export default RootTab

@@ -1,45 +1,56 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text } from 'react-native'
 import { useMutation } from 'react-query'
-import Spinner from 'react-native-loading-spinner-overlay'
+import { Button } from 'react-native-paper'
+import { ScaledSheet } from 'react-native-size-matters'
 
 import { navigate } from '@/navigation/NavigationService'
-import APP_ROUTER from '@/navigation/config/router'
+import ROUTER from '@/navigation/config/router'
 import { useAppContext } from '@/contexts/app/app.context'
 import { api } from '@/utils/axios'
 import { updateContext } from '@/contexts/app/app.action'
+import { OverlayLoading } from '@/components/common'
 
 const params = {
-  email: 'hieu.nguyen@amela.vn',
+  email: 'eve.holt@reqres.in',
   password: '123456',
 }
 
 const SignIn = () => {
   const { dispatch } = useAppContext()
-  const { mutate, isLoading } = useMutation(() => api.post('/auth/sign-in', params), {
+  const { mutate, isLoading } = useMutation(() => api.post('/login', params), {
     onSuccess: async (res) => {
-      dispatch(updateContext({ accessToken: res.data.accessToken }))
+      dispatch(updateContext({ accessToken: res.data.token }))
     },
   })
+
   return (
-    <>
-      <Spinner visible={isLoading} />
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text
-          style={{
-            fontSize: 50,
-            fontWeight: 'bold',
-            marginBottom: 20,
-            color: '#34495e',
-          }}
-        >
-          Sign In
-        </Text>
-        <Button title="Sign In" onPress={() => mutate()} />
-        <Button title="Go to Sign Up" onPress={() => navigate(APP_ROUTER.AUTH.SIGN_UP)} />
-      </View>
-    </>
+    <View style={styles.container}>
+      <OverlayLoading visible={isLoading} />
+
+      <Text style={styles.textTitle}>Sign In</Text>
+      <Button color="blue" onPress={() => mutate()}>
+        Sign in
+      </Button>
+      <Button color="blue" onPress={() => navigate(ROUTER.AUTH.SIGN_UP)}>
+        Go to Sign Up
+      </Button>
+    </View>
   )
 }
+
+const styles = ScaledSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  textTitle: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#34495e',
+  },
+})
 
 export default SignIn

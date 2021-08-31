@@ -1,4 +1,4 @@
-const APP_ROUTER = {
+const ROUTER = {
   AUTH: {
     SIGN_IN: 'SIGN IN',
     SIGN_UP: 'SIGN UP',
@@ -7,13 +7,15 @@ const APP_ROUTER = {
     HOME: {
       TAB: 'HOME TAB',
       ROOT: 'HOME ROOT',
-      ABOUT: 'HOME ABOUT',
+      USER_DETAIL: 'HOME USER DETAIL',
+      TODOS: 'HOME TODOS',
     },
     SETTING: {
       TAB: 'SETTING TAB',
       ROOT: 'SETTING ROOT',
+      RESOURCE: 'SETTING RESOURCE',
     },
   },
 }
 
-export default APP_ROUTER
+export default ROUTER

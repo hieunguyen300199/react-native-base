@@ -1,10 +1,11 @@
 import React from 'react'
 
-import Layout from '@/components/common/Layout'
+import { Header, Layout } from '@/components/common'
 import SettingComponent from '@/components/setting/Setting'
 
 const Setting = () => (
   <Layout>
+    <Header i18nText="setting.title" />
     <SettingComponent />
   </Layout>
 )

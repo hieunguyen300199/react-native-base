@@ -3,6 +3,7 @@ export type AppStateType = {
     id: number
     fullName: string
     email: string
+    avatar: string
   }
   accessToken?: string
 }

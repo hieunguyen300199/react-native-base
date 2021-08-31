@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '@/components/common/Layout'
+import { Layout } from '@/components/common'
 import SignUpComponent from '@/components/auth/SignUp'
 
 const SignUp = () => (
