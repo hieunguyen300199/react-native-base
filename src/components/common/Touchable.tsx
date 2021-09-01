@@ -16,6 +16,7 @@ const TouchableComponent: React.FC<TouchableProps> = ({ disabled, style, childre
       accessibilityRole="button"
       disabled={disabled}
       android_disableSound
+      focusable
       hitSlop={5}
       style={({ pressed }) => [
         style,

@@ -13,7 +13,7 @@ import { AppContextProvider } from '@/contexts/app/app.context'
 
 LogBox.ignoreLogs(['Setting a timer'])
 
-const App: React.FC = () => {
+const App = () => {
   const [queryClient] = React.useState(() => new QueryClient())
 
   return (
