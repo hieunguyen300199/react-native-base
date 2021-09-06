@@ -1,9 +1,9 @@
 import React from 'react'
 import Config from 'react-native-config'
 
-import { AppReducer, initialState } from '@/contexts/app/app.reducer'
-import { AppActionType, AppStateType } from '@/contexts/app/app.type'
-import { updateContext } from '@/contexts/app/app.action'
+import { AppReducer, initialState } from '@/contexts/app.reducer'
+import { AppActionType, AppStateType } from '@/contexts/app.type'
+import { updateContext } from '@/contexts/app.action'
 import { getItem, setItem } from '@/utils/storage'
 
 type ContextType = {

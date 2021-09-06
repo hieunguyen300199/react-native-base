@@ -4,7 +4,7 @@ import { ScaledSheet } from 'react-native-size-matters'
 import { Avatar, Subheading, Title } from 'react-native-paper'
 
 import { useUsers } from '@/data'
-import { ListView, OverlayLoading, Touchable } from '@/components/common'
+import { ListView, OverlayLoading, Touchable } from '@/common'
 import { navigate } from '@/navigation/NavigationService'
 import ROUTER from '@/navigation/config/router'
 

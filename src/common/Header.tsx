@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ScaledSheet } from 'react-native-size-matters'
 
 import { goBack } from '@/navigation/NavigationService'
-import Icon from '@/assets/icon'
+import Assets from '@/assets'
 
 interface IProps {
   i18nText: string
@@ -16,7 +16,7 @@ const HeaderComponent: React.FC<IProps> = ({ i18nText, canBack }) => {
 
   return (
     <Appbar.Header style={styles.container}>
-      {canBack && <Appbar.Action icon={Icon.leftArrow} onPress={goBack} />}
+      {canBack && <Appbar.Action icon={Assets.icon.leftArrow} onPress={goBack} />}
       <Appbar.Content title={t(i18nText)} titleStyle={styles.title} />
     </Appbar.Header>
   )

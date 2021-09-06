@@ -1,5 +1,5 @@
-import { AppActionType, AppStateType } from '@/contexts/app/app.type'
-import { ActionType } from '@/contexts/app/app.action'
+import { AppActionType, AppStateType } from '@/contexts/app.type'
+import { ActionType } from '@/contexts/app.action'
 
 export const initialState: AppStateType = {}
 

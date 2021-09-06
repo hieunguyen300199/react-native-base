@@ -6,7 +6,7 @@ export const useResource = () =>
   useInfiniteQuery(
     QUERY_KEY.RESOURCE,
     async ({ pageParam }) => {
-      const response = await api.get('/unknown', { params: { page: pageParam, delay: 1, per_page: 10 } })
+      const response = await api.get('/unknown', { params: { page: pageParam, per_page: 10 } })
       return response.data
     },
     {

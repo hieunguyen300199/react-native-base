@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Layout } from '@/components/common'
-import SignUpComponent from '@/components/auth/SignUp'
+import { Layout } from '@/common'
+import SignUpComponent from '@/screens/components/auth/SignUp'
 
 const SignUp = () => (
   <Layout>

@@ -4,6 +4,6 @@ import { QUERY_KEY } from './query-key'
 
 export const useDetailUser = (userId: number | string) =>
   useQuery([QUERY_KEY.DETAIL_USER, userId], async () => {
-    const response = await api.get(`/users/${userId}`, { params: { delay: 1 } })
+    const response = await api.get(`/users/${userId}`)
     return response.data
   })

@@ -24,6 +24,7 @@ const Size = {
     button: 4,
   },
   navBarHeight: Platform.OS === 'ios' ? 54 : 66,
+  tabBarHeight: verticalScale(60),
   screenHeight: width < height ? height : width,
   screenWidth: width < height ? width : height,
   safeBottomPadding,

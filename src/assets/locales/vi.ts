@@ -3,6 +3,9 @@ export default {
     title: 'Màn hình chính',
     userDetail: 'Chi tiết',
   },
+  chat: {
+    title: 'Nhắn tin',
+  },
   setting: {
     title: 'Cài đặt',
     changeLanguage: 'Thay đổi ngôn ngữ',

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header, Layout } from '@/components/common'
-import UserDetailComponent from '@/components/home/UserDetail'
+import { Header, Layout } from '@/common'
+import UserDetailComponent from '@/screens/components/home/UserDetail'
 
 const UserDetail = () => (
   <Layout>

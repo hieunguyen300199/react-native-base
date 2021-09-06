@@ -9,24 +9,22 @@ import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper'
 import '@/utils/i18next'
 import { navigationRef } from '@/navigation/NavigationService'
 import Navogation from '@/navigation/Navigation'
-import { AppContextProvider } from '@/contexts/app/app.context'
+import { AppContextProvider } from '@/contexts/app.context'
+
+const queryClient = new QueryClient()
 
 LogBox.ignoreLogs(['Setting a timer'])
 
-const App = () => {
-  const [queryClient] = React.useState(() => new QueryClient())
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <AppContextProvider>
-        <PaperProvider theme={DefaultTheme}>
-          <NavigationContainer ref={navigationRef}>
-            <Navogation />
-          </NavigationContainer>
-        </PaperProvider>
-      </AppContextProvider>
-    </QueryClientProvider>
-  )
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <AppContextProvider>
+      <PaperProvider theme={DefaultTheme}>
+        <NavigationContainer ref={navigationRef}>
+          <Navogation />
+        </NavigationContainer>
+      </PaperProvider>
+    </AppContextProvider>
+  </QueryClientProvider>
+)
 
 export default App

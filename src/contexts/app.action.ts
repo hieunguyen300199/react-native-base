@@ -1,4 +1,4 @@
-import { AppStateType } from '@/contexts/app/app.type'
+import { AppStateType } from '@/contexts/app.type'
 
 export enum ActionType {
   UPDATE_CONTEXT = '@APP/UPDATE_CONTEXT',

@@ -6,10 +6,10 @@ import { ScaledSheet } from 'react-native-size-matters'
 import { useTranslation } from 'react-i18next'
 import { ScrollView } from 'react-native-gesture-handler'
 
-import { useAppContext } from '@/contexts/app/app.context'
-import { removeContext } from '@/contexts/app/app.action'
-import { Touchable } from '@/components/common'
-import Icon from '@/assets/icon'
+import { useAppContext } from '@/contexts/app.context'
+import { removeContext } from '@/contexts/app.action'
+import { Touchable } from '@/common'
+import Assets from '@/assets'
 import { navigate } from '@/navigation/NavigationService'
 import ROUTER from '@/navigation/config/router'
 
@@ -57,7 +57,7 @@ const Setting = () => {
               style={styles.noPadding}
               title={t('setting.changeLanguage')}
               titleStyle={styles.actionText}
-              left={() => <List.Icon icon={Icon.language} />}
+              left={() => <List.Icon icon={Assets.icon.language} />}
             />
           </Touchable>
           <View style={styles.borderMiddle} />
@@ -66,7 +66,7 @@ const Setting = () => {
               style={styles.noPadding}
               title={t('setting.resource.title')}
               titleStyle={styles.actionText}
-              left={() => <List.Icon icon={Icon.resources} />}
+              left={() => <List.Icon icon={Assets.icon.resources} />}
             />
           </Touchable>
           <View style={styles.borderMiddle} />
@@ -75,7 +75,7 @@ const Setting = () => {
               style={styles.noPadding}
               title={t('setting.aboutMe')}
               titleStyle={styles.actionText}
-              left={() => <List.Icon icon={Icon.info} />}
+              left={() => <List.Icon icon={Assets.icon.info} />}
             />
           </Touchable>
           <View style={styles.borderMiddle} />
@@ -84,7 +84,7 @@ const Setting = () => {
               style={styles.noPadding}
               title={`${t('setting.version')} 1.0.0`}
               titleStyle={styles.muteText}
-              left={() => <List.Icon icon={Icon.physics} color="gray" />}
+              left={() => <List.Icon icon={Assets.icon.physics} color="gray" />}
             />
           </Touchable>
           <View style={styles.borderBottom} />
@@ -94,7 +94,7 @@ const Setting = () => {
             style={styles.noPadding}
             title={t('setting.logout')}
             titleStyle={styles.actionText}
-            left={() => <List.Icon icon={Icon.logout} />}
+            left={() => <List.Icon icon={Assets.icon.logout} />}
           />
         </Touchable>
       </View>

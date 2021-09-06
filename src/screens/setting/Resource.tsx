@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header, Layout } from '@/components/common'
-import ResourceComponent from '@/components/setting/Resource'
+import { Header, Layout } from '@/common'
+import ResourceComponent from '@/screens/components/setting/Resource'
 
 const Resource = () => (
   <Layout>

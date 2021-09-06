@@ -7,7 +7,7 @@ export const useUsers = () =>
   useInfiniteQuery(
     QUERY_KEY.USERS,
     async ({ pageParam }) => {
-      const response = await api.get('/users', { params: { page: pageParam, delay: 1 } })
+      const response = await api.get('/users', { params: { page: pageParam } })
       return response.data
     },
     {

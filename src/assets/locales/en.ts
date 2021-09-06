@@ -3,6 +3,9 @@ export default {
     title: 'Home',
     userDetail: 'Detail',
   },
+  chat: {
+    title: 'Chat',
+  },
   setting: {
     title: 'Setting',
     changeLanguage: 'Change language',

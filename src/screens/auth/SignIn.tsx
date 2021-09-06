@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Layout } from '@/components/common'
-import SignInComponent from '@/components/auth/SignIn'
+import { Layout } from '@/common'
+import SignInComponent from '@/screens/components/auth/SignIn'
 
 const SignIn = () => (
   <Layout>

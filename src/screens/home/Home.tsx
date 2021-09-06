@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header, Layout } from '@/components/common'
-import HomeComponent from '@/components/home/Home'
+import { Header, Layout } from '@/common'
+import HomeComponent from '@/screens/components/home/Home'
 
 const Home = () => (
   <Layout>

@@ -5,7 +5,7 @@ import { ScaledSheet } from 'react-native-size-matters'
 import { Avatar, Subheading, Title } from 'react-native-paper'
 
 import { useDetailUser } from '@/data'
-import { OverlayLoading } from '@/components/common'
+import { OverlayLoading } from '@/common'
 
 interface IRoute extends RouteProp<ParamListBase> {
   params: {

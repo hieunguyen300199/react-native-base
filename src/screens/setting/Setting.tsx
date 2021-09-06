@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header, Layout } from '@/components/common'
-import SettingComponent from '@/components/setting/Setting'
+import { Header, Layout } from '@/common'
+import SettingComponent from '@/screens/components/setting/Setting'
 
 const Setting = () => (
   <Layout>

@@ -6,10 +6,10 @@ import { ScaledSheet } from 'react-native-size-matters'
 
 import { navigate } from '@/navigation/NavigationService'
 import ROUTER from '@/navigation/config/router'
-import { useAppContext } from '@/contexts/app/app.context'
+import { useAppContext } from '@/contexts/app.context'
 import { api } from '@/utils/axios'
-import { updateContext } from '@/contexts/app/app.action'
-import { OverlayLoading } from '@/components/common'
+import { updateContext } from '@/contexts/app.action'
+import { OverlayLoading } from '@/common'
 
 const params = {
   email: 'eve.holt@reqres.in',

@@ -3,9 +3,9 @@ import { View } from 'react-native'
 import { ScaledSheet } from 'react-native-size-matters'
 
 import { List } from 'react-native-paper'
-import { ListView, OverlayLoading } from '@/components/common'
+import { ListView, OverlayLoading } from '@/common'
 import { useResource } from '@/data'
-import Icon from '@/assets/icon'
+import Assets from '@/assets'
 
 const Resource = () => {
   const { data: resources, isLoading, isFetching, isFetchingNextPage, fetchNextPage, refetch } = useResource()
@@ -13,7 +13,7 @@ const Resource = () => {
   const renderItem = ({ item }: any) => (
     <List.Item
       title={`${item.id} . ${item.name} . ${item.year}`}
-      left={() => <List.Icon icon={Icon.resources} color={item.color} />}
+      left={() => <List.Icon icon={Assets.icon.resources} color={item.color} />}
     />
   )
 
