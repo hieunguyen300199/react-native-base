@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://reactnative.dev/">
-    <img src="https://hieunguyen300199.github.io/static-file/react-native-guide/react-native.png" height="128">
+    <img src="https://hiunguyn.github.io/static-file/react-native-guide/react-native.png" height="128">
     <h1 align="center">React Native</h1>
   </a>
 </p>
@@ -16,9 +16,9 @@ $ npm run pod-install
 $ npm start
 ```
 
-## Environment Setup [Here](https://github.com/hieunguyen300199/static-file/blob/master/react-native-guide/environment-setup/environment-setup.md#environment-setup)
+## Environment Setup [Here](https://github.com/hiunguyn/static-file/blob/master/react-native-guide/environment-setup/environment-setup.md#environment-setup)
 
-## Code Push Setup [Here](https://github.com/hieunguyen300199/static-file/blob/master/react-native-guide/code-push-setup/code-push-setup.md#code-push-setup)
+## Code Push Setup [Here](https://github.com/hiunguyn/static-file/blob/master/react-native-guide/code-push-setup/code-push-setup.md#code-push-setup)
 
 ## Commands
 
